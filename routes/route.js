@@ -1,6 +1,13 @@
 const express = require("express");
 const {registerUser,loginUser,accountSetup, getAllusers} = require("../controllers/authController.js");
-const {addVehicle,getAllVehicles} = require("../controllers/vehicleController.js");
+const {
+    addVehicle,
+    getAllVehicles,
+    showAllManufacturers,
+    showAllVehicleTypes,
+    showAllVehicleModels,
+    showAllVehicleColors
+} = require("../controllers/vehicleController.js");
 
 
 const router = express.Router();
@@ -19,5 +26,13 @@ router.get("/users", getAllusers);
 router.post("/vehicle", addVehicle);
 
 router.get("/vehicle", getAllVehicles);
+
+router.get("/manufacturer",showAllManufacturers);
+
+router.get("/types",showAllVehicleTypes);
+
+router.get("/models",showAllVehicleModels);
+
+router.get("/colors",showAllVehicleColors);
 
 module.exports = router;

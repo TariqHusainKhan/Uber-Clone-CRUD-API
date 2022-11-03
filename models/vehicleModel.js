@@ -15,15 +15,40 @@ const vehicleSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
-    vehicleModal:{
+    vehicleType:[
+        {
+            image:{
+              type:String,
+              required:true,
+             },
+             typeName:{
+                type:String,
+                required:true,
+             }, 
+             seatCount:{
+                type:Number,
+                required:true,
+             }, 
+       }]
+,
+    vehicleColor:[
+        {
+            colorName:{
+              type:String,
+              required:true,
+             },
+             colorCode:{
+                type:String,
+                required:true,
+             }, 
+       }
+],
+    vehicleModel:{
         type:String,
         required:true,
     },
-    vehicleColor:{
-        type:String,
-        required:true,
-    },
-  yearModel:{
+   
+  yearMade:{
     type:String,
     required:true,
   }
